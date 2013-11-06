@@ -56,7 +56,7 @@ class DisplayWebHandler(SimpleHTTPRequestHandler):
             hostname = self.server.server_name
             rospy.loginfo("Webserver host: %s" % hostname)
             data = DisplayWebHandler.fill_page_content(data,
-                                                       {'bridge_server':'ws://%s:9898'%hostname})
+                                                       {'bridge_server':'ws://%s:9090'%hostname})
             self.wfile.write(data)
             return
         if self.path=="/eventemitter2.js":
